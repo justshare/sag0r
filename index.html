@@ -197,13 +197,13 @@
   <script>
     (function() {
       Abba('Tagline')
-      .control('1: Reach', function(){
+      .control('1: Reach', {weight: 20}, function(){
         $('.section.hero .hero-header').html('Reach your audience.');
         })
-      .variant('2: Automate', function(){
+      .variant('2: Automate', {weight: 3}, function(){
         $('.section.hero .hero-header').html('Automate your social life.');
       })
-      .variant('3: Caring', function(){
+      .variant('3: Caring', {weight: 3}, function(){
         $('.section.hero .hero-header').html('Sharing is caring.');
       })
       .start();
