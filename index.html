@@ -190,12 +190,20 @@
     </div>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/purl.js"></script>
   <script type="text/javascript" src="js/webflow.js"></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
   <script language="javascript" src="//qappab.herokuapp.com/v1/abba.js"></script>
 
   <script>
     (function() {
+
+      var url = $.url();
+      source = url.param('utm_source');
+      medium = url.param('utm_medium');
+      term = url.param('utm_term');
+      campaign = url.param('utm_campaign');
+
       Abba('Tagline')
       .control('1: Reach', {weight: 20}, function(){
         $('.section.hero .hero-header').html('Reach your audience.');
