@@ -203,24 +203,67 @@
       medium = url.param('utm_medium');
       term = url.param('utm_term');
       campaign = url.param('utm_campaign');
+      campaign = campaign?campaign.replace(/\/+$/, ""):null;
 
-      Abba('Tagline')
-      .control('1: Reach', {weight: 20}, function(){
-        $('.section.hero .hero-header').html('Reach your audience.');
-        })
-      .variant('2: Automate', {weight: 3}, function(){
-        $('.section.hero .hero-header').html('Automate your social life.');
-      })
-      .variant('3: Caring', {weight: 3}, function(){
-        $('.section.hero .hero-header').html('Sharing is caring.');
-      })
-      .variant('4: Reach out', {weight: 3}, function(){
-        $('.section.hero .hero-header').html('Reach out. Find your audience.');
-      })
-      .variant('5: Reach out', {weight: 3}, function(){
-        $('.section.hero .hero-header').html('We help you find your audience.');
-      })
-      .start();
+      switch (campaign){
+        case 'NolimitsFB':
+        case 'Nolimits':
+            Abba('Tagline')
+            .control('1: Reach', {weight: 6}, function(){
+              $('.section.hero .hero-header').html('Reach your audience.');
+              })
+            .variant('2: Automate', {weight: 3}, function(){
+              $('.section.hero .hero-header').html('Automate your social life.');
+            })
+            .variant('6: No limits', {weight: 25}, function(){
+              $('.section.hero .hero-header').html('No limits to your social potential.');
+            })
+            .variant('7: Plans without limits', {weight: 25}, function(){
+              $('.section.hero .hero-header').html('Welcome to unlimited sharing plans.');
+            })
+            .start();
+            break;
+        case 'PRO':
+        case 'PROFB':
+            Abba('Tagline')
+            .control('1: Reach', {weight: 6}, function(){
+              $('.section.hero .hero-header').html('Reach your audience.');
+              })
+            .variant('2: Automate', {weight: 3}, function(){
+              $('.section.hero .hero-header').html('Automate your social life.');
+            })
+            .variant('8: Pro features', {weight: 25}, function(){
+              $('.section.hero .hero-header').html('Pro features now on a Budget.');
+            })
+            .start();
+            break;
+
+        default:
+            Abba('Tagline')
+            .control('1: Reach', {weight: 20}, function(){
+              $('.section.hero .hero-header').html('Reach your audience.');
+              })
+            .variant('2: Automate', {weight: 3}, function(){
+              $('.section.hero .hero-header').html('Automate your social life.');
+            })
+            .variant('3: Caring', {weight: 3}, function(){
+              $('.section.hero .hero-header').html('Sharing is caring.');
+            })
+            .variant('4: Reach out', {weight: 3}, function(){
+              $('.section.hero .hero-header').html('Reach out. Find your audience.');
+            })
+            .variant('5: Reach out', {weight: 3}, function(){
+              $('.section.hero .hero-header').html('We help you find your audience.');
+            })
+            .start();
+            break;
+      }
+
+    setTimeout(function(){
+      _gaq && _gaq.push(['_trackEvent', 'Campaign', campaign, term, $('.section.hero .hero-header').text()]);
+      _gaq && _gaq.push(['_trackEvent', 'Header Text', $('.section.hero .hero-header').text()]);
+      }, 100);
+
 
     })();
     function jump(h){
