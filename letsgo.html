@@ -98,8 +98,8 @@
       </div>
     </div>
   </div>
-  
-  
+
+
   <div class="section">
 	<div class="w-container">
       <div class="w-row">
@@ -125,9 +125,9 @@
             <img src="images/first-section.jpg" width="250" alt="52ddf24e5d3566c1430000a4_first-section.jpg">
         </div>
       </div>
-    </div>  
+    </div>
   </div>
-  
+
   <div class="section purple">
     <div class="w-container">
       <div class="w-row">
@@ -244,19 +244,22 @@
 
         default:
             Abba('Tagline')
-            .control('1: Reach', {weight: 20}, function(){
+            .control('9: Pricey', {weight: 100}, function(){
+              $('.section.hero .hero-header').html('Powerful, yet Not Pricey, Social Media Publishing.');
+              })
+            .variant('1: Reach', {weight: 1}, function(){
               $('.section.hero .hero-header').html('Reach your audience.');
               })
-            .variant('2: Automate', {weight: 3}, function(){
+            .variant('2: Automate', {weight: 1}, function(){
               $('.section.hero .hero-header').html('Automate your social life.');
             })
-            .variant('3: Caring', {weight: 3}, function(){
+            .variant('3: Caring', {weight: 1}, function(){
               $('.section.hero .hero-header').html('Sharing is caring.');
             })
-            .variant('4: Reach out', {weight: 3}, function(){
+            .variant('4: Reach out', {weight: 1}, function(){
               $('.section.hero .hero-header').html('Reach out. Find your audience.');
             })
-            .variant('5: Reach out', {weight: 3}, function(){
+            .variant('5: Reach out', {weight: 1}, function(){
               $('.section.hero .hero-header').html('We help you find your audience.');
             })
             .start();
