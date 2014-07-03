@@ -6,7 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/webflow.css">
+  <link href="css/structure.css" rel="stylesheet">
+  <link href="css/form.css" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/jsh.webflow.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
@@ -18,6 +22,22 @@
   <script type="text/javascript" src="js/modernizr.js"></script>
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+  mixpanel.init("cf47f8688b7b7b06cdc64e0bf1a87446");
+  mixpanel.track("Page View");
+  mixpanel.track_forms("#form1", "Completed Signup", function(){ try{
+      moi = document.forms[0].elements['Field1'].value;
+      if (!!moi){
+        mixpanel.alias(moi);
+        return {"data":moi};
+      }
+    }catch(e){}
+    return {};
+  });
+  </script><!-- end Mixpanel -->
+
 </head>
 <body>
   <header class="navbar">
@@ -27,7 +47,7 @@
           <img class="logo" src="images/just_share_128.png" width="25" alt="53595a1d8ac282013e001031_just_share_128.png">
           <div class="app-name">JustSHARE</div>
         </div>
-        <div class="w-col w-col-8 nav-column"><a class="nav-link" href="javascript:lm();">Learn More</a><a class="nav-link" href="javascript:signup();">Sign Up</a>
+        <div class="w-col w-col-8 nav-column"><a class="nav-link" href="javascript:lm();">Learn More</a><a class="nav-link" href="javascript:signuptopnav();">Sign Up</a>
         </div>
       </div>
     </div>
@@ -40,21 +60,21 @@
         </div>
         <div class="w-col w-col-6 call-to-action">
           <h1 class="hero-header">Powerful, yet Not Pricey, Social Media Publishing</h1>
-          <p class="hero-subtitle">Specially crafted plans with No Limits on posts, No Limits on connected Social Profiles, No Limits on Team Members. Starting at just $5 per month. <br><br><i>Sign Up Now for our Free Trial. No Credit Card required.</i></p><a class="button" href="javascript:signup();">Sign Up</a>
+          <p class="hero-subtitle">Specially crafted plans with No Limits on posts, No Limits on connected Social Profiles, No Limits on Team Members. Starting at just $5 per month. <br><br><i>Sign Up Now for our Free Trial. </i></p><a class="button" href="javascript:signuptopcta();">Sign Up</a>
         </div>
       </div>
     </div>
   </div>
   <div id="intro" class="w-hidden-small w-hidden-tiny section grey"></div>
-  
-  
+
+
   <div class="section grey">
     <div class="w-container">
-      <div class="w-row">  
+      <div class="w-row">
         <div class="w-col w-col-4 center">
         <br><br><br>
             <img src="http://cdn.justshareapp.com/WhySocGraphA.jpg" width="500">
-        </div>  
+        </div>
         <div class="w-col w-col-8">
           <h2>Effective Marketing</h2>
           <p>In recent researches by SimplyMeasured and Software Advice.</p>
@@ -65,7 +85,7 @@
           	<li><p>Those that use tools found it significantly easier to plan, manage and optimize their content. </p></li>
             <li><p>And yet just over 50% of them use software tools to manage social content... </p>
           </ul>
-          <p>	
+          <p>
           	<br>With JustShare you will be able to improve your Social Media Marketing effectiveness with ease using our optimized scheduling, publishing and analytics capabilities. Signup Now to find out how!
           </p>
         </div>
@@ -73,7 +93,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="w-clearfix section" id="features">
     <div class="w-container">
       <div class="w-row">
@@ -176,29 +196,116 @@
     <div class="w-row">
       <div class="w-col w-col-6">
 
-        <div id="wufoo-zkth2qx0ebesyu">
-        Fill out my <a href="https://arg0s.wufoo.com/forms/zkth2qx0ebesyu">online form</a>.
+
+        <div id="container" class="ltr">
+
+        <form id="form1" name="form1" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate
+              action="https://arg0s.wufoo.com/forms/zkth2qx0ebesyu/#public">
+
+        <header id="header" class="info">
+        <h2>Your Invite to JustShare</h2>
+        <div><img src="http://www.justshareapp.com/images/just_share_128.png" height="64" alt="image" /><br />
+        We're offering limited access to JustShare to manage early demand. Signup below for early access. We will notify you when your account is setup!</div>
+        </header>
+
+        <ul>
+
+        <li id="foli1" class="notranslate      ">
+        <label class="desc" id="title1" for="Field1">
+        Your email. No spam, serious.
+        <span id="req_1" class="req">*</span>
+        </label>
+        <div>
+        <input id="Field1" name="Field1" type="email" spellcheck="false" class="field text large" value="" maxlength="255" tabindex="1" required />
         </div>
-        <div id="wuf-adv" style="font-family:inherit;font-size: small;color:#a7a7a7;text-align:center;display:block;">Use <a href="http://www.wufoo.com/partners/">Wufoo integrations</a> and get your data to your favorite apps.</div>
-        <script type="text/javascript">var zkth2qx0ebesyu;(function(d, t) {
-        var s = d.createElement(t), options = {
-        'userName':'arg0s',
-        'formHash':'zkth2qx0ebesyu',
-        'autoResize':true,
-        'height':'496',
-        'async':true,
-        'host':'wufoo.com',
-        'header':'show',
-        'ssl':true};
-        s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-        s.onload = s.onreadystatechange = function() {
-        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-        try { zkth2qx0ebesyu = new WufooForm();zkth2qx0ebesyu.initialize(options);zkth2qx0ebesyu.display(); } catch (e) {}};
-        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-        })(document, 'script');</script>
+        <p class="instruct" id="instruct1"><small>An email for us to let you know when we're launching</small></p>
+        </li>
+        <li id="foli2" class="notranslate  threeColumns     ">
+        <fieldset>
+        <![if !IE | (gte IE 8)]>
+        <legend id="title2" class="desc">
+        Which of these describes you best?
+        <span id="req_2" class="req">*</span>
+        </legend>
+        <![endif]>
+        <!--[if lt IE 8]>
+        <label id="title2" class="desc">
+        Which of these describes you best?
+        <span id="req_2" class="req">*</span>
+        </label>
+        <![endif]-->
+        <div>
+        <input id="radioDefault_2" name="Field2" type="hidden" value="" />
+        <span>
+        <input id="Field2_0" name="Field2" type="radio" class="field radio" value="Small Business Owner" tabindex="2" required />
+        <label class="choice" for="Field2_0" >
+        Small Business Owner</label>
+        </span>
+        <span>
+        <input id="Field2_1" name="Field2" type="radio" class="field radio" value="Digital Marketer" tabindex="3" required />
+        <label class="choice" for="Field2_1" >
+        Digital Marketer</label>
+        </span>
+        <span>
+        <input id="Field2_2" name="Field2" type="radio" class="field radio" value="Journalist" tabindex="4" required />
+        <label class="choice" for="Field2_2" >
+        Journalist</label>
+        </span>
+        <span>
+        <input id="Field2_3" name="Field2" type="radio" class="field radio" value="Blogger" tabindex="5" required />
+        <label class="choice" for="Field2_3" >
+        Blogger</label>
+        </span>
+        <span>
+        <input id="Field2_4" name="Field2" type="radio" class="field radio" value="Other" tabindex="6" checked="checked" onmouseup="document.getElementById('Field2_other').focus();" required />
+        <label class="choice" for="Field2_4"  onmouseup="document.getElementById('Field2_other').focus();">
+        Other</label>
+        <input id="Field2_other" name="Field2_other_Other" type="text" class="field text other" value="" onclick="document.getElementById('Field2_4').checked = 'checked';" tabindex="7" />
+        </span>
         </div>
+        </fieldset>
+        </li>
+        <li id="foli6"
+        class="notranslate      "><label class="desc" id="title6" for="Field6">
+        Why would you like access to JustShare?
+        <span id="req_6" class="req">*</span>
+        </label>
+
+        <div>
+        <textarea id="Field6"
+        name="Field6"
+        class="field textarea small"
+        spellcheck="true"
+        rows="10" cols="50"
+
+        tabindex="8"
+        onkeyup="validateRange(6, 'character');"
+        required  ></textarea>
+
+        <label for="Field6">Maximum Allowed: <var id="rangeMaxMsg6">140</var> characters.&nbsp;&nbsp;&nbsp; <em class="currently">Currently Used: <var id="rangeUsedMsg6">0</var> characters.</em></label>
+        </div>
+        </li>
+        <li class="buttons ">
+        <div>
+
+          <input type="image" src="images/appstore.png" width="114" alt="52af8cf8aae9d4d567000057_appstore.png" id="saveForm" name="saveForm" class="w-inline-block button app-button"
+            type="submit"
+         /></div>
+        </li>
+
+        <li class="hide">
+        <label for="comment">Do Not Fill This Out</label>
+        <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+        <input type="hidden" id="idstamp" name="idstamp" value="izaX1+PrPYHnUwJCdJclGU0sFqcaIkUedx4TjvdU0BQ=" />
+        </li>
+        </ul>
+        </form>
+
+        </div><!--container-->
+
       </div>
     </div>
+</div>
 </div>
 
 
@@ -289,15 +396,29 @@
       window.scrollTo(0, top);
     };
     function lm(){
+      mixpanel.track("Learn More Clicked");
       jump('intro');
       _gaq.push(['_trackEvent', 'Navigation', 'Learn More', 'clicked']);
     };
-    function signup(){
+    function _signup(){
       $('#signup').css({"display":"block"});
       jump('signup');
       Abba('Tagline').complete();
       _gaq.push(['_trackEvent', 'Navigation', 'Notify Me', 'clicked']);
-  }
+      return false;
+    }
+    function signup(){
+      mixpanel.track("Notify Me Clicked - Body CTA");
+      return _signup();
+    }
+    function signuptopnav(){
+      mixpanel.track("Notify Me Clicked - Top Nav");
+      return _signup();
+    }
+    function signuptopcta(){
+      mixpanel.track("Notify Me Clicked - Top CTA");
+      return _signup();
+    }
   </script>
 
   <!-- Asynchronous Google Analytics snippet -->
@@ -318,6 +439,8 @@
   </script>
 
   <script src="js/jquery.scrolldepth.min.js"></script>
+  <script src="js/wufoo.js"></script>
+
   <script>
   $(function() {
     $.scrollDepth();
@@ -333,4 +456,3 @@
 </script>
 </body>
 </html>
-Status API Training Shop Blog About © 2014 GitHub, Inc. Terms Privacy Security Contact 
