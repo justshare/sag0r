@@ -283,6 +283,9 @@ p {
   .hero-subtitle {
     text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px;
   }
+  .tbl-cnt{
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   h2 {
@@ -343,6 +346,9 @@ p {
     margin-top: -6px;
     float: none;
   }
+  .tbl-cnt{
+    display: none;
+  }
 }
 @media (max-width: 479px) {
   h3 {
@@ -365,5 +371,8 @@ p {
   }
   .price-text {
     font-size: 23px;
+  }
+  .tbl-cnt{
+    display: none;
   }
 }
