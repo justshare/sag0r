@@ -205,7 +205,7 @@
             </ul>
           </div>
           <div class="w-col w-col-3 center jsaPricing">
-            <h3><a class="w-inline-block button app-button" onclick="signup();">
+            <h3><a class="w-inline-block button app-button" onclick="signupfromtable();">
             Free
           </a></h3>
           </div>
@@ -546,6 +546,10 @@
     function signuptopcta(){
       mixpanel.track("Notify Me Clicked - Top CTA");
       return _signup();
+    }
+    function signupfromtable(){
+      mixpanel.track("Notify Me Clicked - Table CTA");
+      return _signup();     
     }
   </script>
 
