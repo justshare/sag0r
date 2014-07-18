@@ -34,18 +34,27 @@ html{
 
 .tbl-hdr{
 	background-color: rgba(200, 200, 200, 0.2);
-	padding: 5px 10px 5px 10px;
+	padding: 10px 10px 10px 10px;
 }
 
 .tbl-row{
 	background-color: rgba(180, 154, 194, 0.2);
-	padding: 5px 10px 5px 10px;
+	padding: 15px 10px 15px 10px;
 }
 
+.tbl-row li, .tbl-row2 li{
+	margin-left: -30px;
+    list-style-type: none;
+}
+
+.tbl-row ul li:before, .tbl-row2 ul li:before {
+    content:"\2713\0020";
+}
 
 .tbl-row2{
 	background-color: rgba(180, 154, 194, 0.1);
-	padding: 5px 10px 5px 10px;
+	padding: 15px 10px 15px 10px;
+	margin-left: 20px;
 }
 
 
