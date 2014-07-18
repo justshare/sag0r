@@ -104,7 +104,7 @@ html{
 
 /* ----- Borders ----- */
 #container{
-	border:1px solid #cccccc;
+	/*border:1px solid #cccccc;*/
 }
 .wufoo .info, .wufoo .paging-context{
 	border-bottom:1px dotted #cccccc;
@@ -127,18 +127,22 @@ html{
 
 /* ----- Typography ----- */
 .wufoo .info h2{
-	font-size:160%;
-	font-family:inherit;
-	font-style:normal;
-	font-weight:bold;
-	color:#000000;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: Montserrat, sans-serif;
+	color: #745785;
+	font-size: 32px;
+	line-height: 36px;
+	font-weight: 400;
 }
 .wufoo .info div{
-	font-size:95%;
-	font-family:inherit;
-	font-style:normal;
-	font-weight:normal;
-	color:#444444;
+	display: block;
+	margin-bottom: 5px;
+	font-family: Bitter, serif;
+	color: #a1a1a1;
+	font-size: 15px;
+	line-height: 23px;
+
 }
 .wufoo .section h3{
 	font-size:110%;
@@ -157,18 +161,18 @@ html{
 
 .wufoo label.desc, .wufoo legend.desc{
 	font-size:95%;
-	font-family:inherit;
-	font-style:normal;
-	font-weight:bold;
+	font-family: Bitter, serif;
+	font-size: 15px;
+	line-height: 23px;
 	color:#444444;
 }
 
 .wufoo label.choice{
 	font-size:100%;
-	font-family:inherit;
-	font-style:normal;
-	font-weight:normal;
-	color:#444444;
+	font-family: Bitter, serif;
+	color: #a1a1a1;
+	font-size: 15px;
+	color: #999;
 }
 .wufoo input.text, .wufoo textarea.textarea, .wufoo input.file, .wufoo select.select{
 	font-style:normal;
@@ -178,12 +182,12 @@ html{
 }
 {* Custom Fonts Break Dropdown Selection in IE *}
 .wufoo input.text, .wufoo textarea.textarea, .wufoo input.file{ 
-	font-family:inherit;
+	font-family: Bitter, serif;
 }
 
 
 .wufoo li div, .wufoo li span, .wufoo li div label, .wufoo li span label{
-	font-family:inherit;
+	font-family: Bitter, serif;
 	color:#444444;
 }
 .safari .wufoo input.file{ /* Webkit */
@@ -216,7 +220,7 @@ li.leftThird small, li.middleThird small, li.rightThird small,
 .wufoo li.focused label.desc, .wufoo li.focused legend.desc,
 .wufoo li.focused div, .wufoo li.focused span, .wufoo li.focused div label, .wufoo li.focused span label,
 .safari .wufoo li.focused input.file{ 
-	color:#000000;
+	/*color:#000000;*/
 }
 
 /* ----- Confirmation ----- */
