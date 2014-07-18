@@ -51,7 +51,7 @@
         </div>
         <div class="w-col w-col-6 call-to-action">
           <h1 class="hero-header" style="margin-top:50px;">Powerful, yet Not Pricey, Social Media Publishing</h1>
-          <p class="hero-subtitle"">Specially crafted plans with No Limits on posts, connected Social Profiles, or Team Members. Starting at just $5 per month. <br><br><i>Get started now with our Free Trial. </i></p><a class="button" onclick="signuptopcta();">Sign Up</a>
+          <p class="hero-subtitle"">Our plans have the best pricing in the industry, and include a forever free plan.<br><br><i>Get started now with our Free Trial. </i></p><a class="button" onclick="signuptopcta();">Sign Up</a>
         </div>
       </div>
     </div>
@@ -168,7 +168,7 @@
   </div>
 
   <div class="section">
-    <div class="w-container">
+    <div class="w-container tbl-cnt">
       <div class="w-row tbl-hdr">
         <div class="w-col w-col-6">
           <h2>Plan Comparator</h2>
@@ -196,20 +196,23 @@
         </div>
       </div>
 
-      <div class="w-row tbl-row2">
-        <div class="w-col w-col-6">
-          <ul>
-            <li>Upto 10 Profiles</li>
-            <li>Up to 25 Queued Posts</li>
-            <li>One Team Member</li>
-          </ul>
-        </div>
-        <div class="w-col w-col-3 center">
-          <h3>Free</h3>
-        </div>
-        <div class="w-col w-col-3 center">
-          <h3>$10</h3>
-        </div>
+      <div class="highlightRow">
+          <div class="w-col w-col-6 highlightFeatures">
+            <ul>
+              <li>Upto 10 Profiles</li>
+              <li>Up to 25 Queued Posts</li>
+              <li>One Team Member</li>
+            </ul>
+          </div>
+          <div class="w-col w-col-3 center jsaPricing">
+            <h3><a class="w-inline-block button app-button" onclick="signupfromtable();">
+            Free
+          </a></h3>
+          </div>
+          <div class="w-col w-col-3 center buffPricing">
+            <h3>$10</h3>
+          </div>
+        
       </div>
 
       <div class="w-row tbl-row">
@@ -543,6 +546,10 @@
     function signuptopcta(){
       mixpanel.track("Notify Me Clicked - Top CTA");
       return _signup();
+    }
+    function signupfromtable(){
+      mixpanel.track("Notify Me Clicked - Table CTA");
+      return _signup();     
     }
   </script>
 
